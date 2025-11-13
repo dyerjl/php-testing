@@ -5,7 +5,7 @@
     </head>
 
     <body>
-       <form>
+       <form action="adduser.php">
         Surname: <input type="text" name ="surname"><br>
         Forename: <input type="text" name ="forename"><br>
         Passowrd: <input type="text" name ="password"><br>
@@ -14,7 +14,7 @@
         Role:
         <input type="radio" name ="role" value="pupil" checked><br>
         <input type="radio" name ="role" value="admin">Admin<br>
-        <input type="radio" name ="role" value="pupil" checked><br>
+        <input type="submit" value="Add user"><br>
        </form>
     </body>
 </html>
