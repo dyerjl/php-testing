@@ -6,7 +6,7 @@
 
     <hody>
         <?php
-            phpinfo();
+            echo("hi");
             ?>
     </hody>
 </html>
