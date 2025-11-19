@@ -1,7 +1,7 @@
 <?php
     $servername="localhost";
     $username= "root";
-    $password= "password";
+    $password= "root";
 
     $conn=new PDO("mysql:host=$servername",$username,$password);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -20,6 +20,15 @@
     Year INT(2) NOT NULL,
     Balance DECIMAL (15,2) NOT NULL,
     Role TINYINT(1));
+    ");
+    $stmt1->execute();
+    $stmt1= $conn->prepare("DROP TABLE IF EXISTS tblfood;
+    CREATE TABLE tblfood
+    (FoodID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(20) NOT NULL,
+    Desription VARCHAR(200) NOT NULL,
+    Category VARCHAR(20) NOT NULL,
+    Price DECIMAL (15,2) NOT NULL,
     ");
     $stmt1->execute();
 ?>
