@@ -28,7 +28,7 @@
     Name VARCHAR(20) NOT NULL,
     Desription VARCHAR(200) NOT NULL,
     Category VARCHAR(20) NOT NULL,
-    Price DECIMAL (15,2) NOT NULL,
+    Price DECIMAL (15,2) NOT NULL)
     ");
     $stmt1->execute();
 ?>

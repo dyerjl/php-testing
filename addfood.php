@@ -8,9 +8,9 @@
     $stmt1 = $conn->prepare("INSERT INTO tblfood
     (FoodID, Name, Description, Category, Price)
     VALUES
-    (NULL,:FoodID, :Name, :Description, :Category, :Price)
+    (NULL, :Name, :Description, :Category, :Price)
     "); 
-    $stmt1->bindParam(":FoodID", $_POST["FoodID"]);
+    
     $stmt1->bindParam(":Name", $_POST["Name"]);
     $stmt1->bindParam(":Description", $_POST["Description"]);
     $stmt1->bindParam(":Category", $_POST["Category"]);
