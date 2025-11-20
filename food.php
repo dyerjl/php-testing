@@ -1,11 +1,3 @@
-Make a Food table...
-Use these fields
-FoodID, Name, Description, Category (drink, snack, sandwich), price
-
-Make a form to input food (drop down list for Category... look it up!)
-Add food to database
-Show current foods on this page as per users page.
-
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -14,17 +6,17 @@ Show current foods on this page as per users page.
 
     <body>
        <form action="addfood.php" method="post">
-            <label for="Category">Choose a category:</label>
-            <select name="Category" id="Category">
-                <option value="Sandwich">Sandwich</option>
-                <option value="Drink">Drink</option>
-                <option value="Snack">Snack</option>
+            <label for="category">Choose a category:</label>
+            <select name="category" id="category">
+                <option value="sandwich">Sandwich</option>
+                <option value="drink">Drink</option>
+                <option value="snack">Snack</option>
                 
             </select>
             <br>
-            Name: <input type="text" name ="Name"><br>
-            Description: <input type="text" name ="Description"><br>
-            Price: <input type="number" name ="Price"><br>
+            Name: <input type="text" name ="name"><br>
+            Description: <input type="text" name ="description"><br>
+            Price: <input type="number" name ="price"><br>
             <input type="submit" value="Submit">
 
        
@@ -34,6 +26,12 @@ Show current foods on this page as per users page.
             include_once("connection.php");
             $stmt1= $conn->prepare("SELECT * FROM tblfood");
             $stmt1->execute();
+            while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+        {
+            //print_r($row);
+            echo($row["name"]." ".$row["description"]." ".$row["price"]);
+            echo("<br>");
+        }
             
         
         
