@@ -22,6 +22,19 @@
     Role TINYINT(1));
     ");
     $stmt1->execute();
+    //add in some default data
+    $hashedpassword=password_hash("password", PASSWORD_DEFAULT);
+    echo($hashedpassword);
+    $stmt1 = $conn->prepare("INSERT INTO tblusers
+    (USERID, Username, Surname, Forename, Password, Year, Balance, Role)
+    VALUES
+    (NULL,'BibiN', 'Netanyahu', 'Benjamin', :Password, 12, 10, 1),
+    (NULL,'Bubba', 'Clinton', 'Bill', :Password, 12, 10, 0)
+    "); 
+    
+    $stmt1->bindParam(":Password",$hashedpassword);
+
+    $stmt1->execute();
     $stmt1= $conn->prepare("DROP TABLE IF EXISTS tblfood;
     CREATE TABLE tblfood
     (FoodID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

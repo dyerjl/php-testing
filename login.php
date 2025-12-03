@@ -7,7 +7,9 @@
     <body>
        <form action="processlogin.php" method = "post">
         Username: <input type="text" name ="username"><br>
-        Passowrd: <input type="password" name ="password"><br>
+        Password: <input type="password" name ="password"><br>
+        
+        <input type="submit" value="Submit"><br>
        </form>
 
        
